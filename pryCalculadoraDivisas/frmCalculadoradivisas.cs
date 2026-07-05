@@ -6,5 +6,6 @@ namespace pryCalculadoraDivisas
         {
             InitializeComponent();
         }
+
     }
 }
