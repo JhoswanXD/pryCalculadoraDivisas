@@ -1,6 +1,6 @@
 ﻿namespace pryCalculadoraDivisas
 {
-    partial class frmCalculadoraDivisas
+    partial class frmDivisas
     {
         /// <summary>
         ///  Required designer variable.
@@ -28,32 +28,31 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmCalculadoraDivisas));
-            cmbTipoCambio = new ComboBox();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmDivisas));
+            cmbMonedas = new ComboBox();
             txtCantidad = new TextBox();
             pictureBox1 = new PictureBox();
             lblTitulo = new Label();
             lblResultado = new Label();
-            button1 = new Button();
+            btnConvertir = new Button();
             label1 = new Label();
             label2 = new Label();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
             // 
-            // cmbTipoCambio
+            // cmbMonedas
             // 
-            cmbTipoCambio.Font = new Font("Segoe UI", 15.75F, FontStyle.Bold);
-            cmbTipoCambio.FormattingEnabled = true;
-            cmbTipoCambio.Items.AddRange(new object[] { "Peso Mexicano a Dolar", "Dolar a Peso Mexicano", "Peso Mexicano a Euro", "Euro a Peso Mexicano" });
-            cmbTipoCambio.Location = new Point(738, 301);
-            cmbTipoCambio.Name = "cmbTipoCambio";
-            cmbTipoCambio.Size = new Size(312, 44);
-            cmbTipoCambio.TabIndex = 1;
+            cmbMonedas.Font = new Font("Segoe UI", 15.75F, FontStyle.Bold);
+            cmbMonedas.FormattingEnabled = true;
+            cmbMonedas.Location = new Point(440, 294);
+            cmbMonedas.Name = "cmbMonedas";
+            cmbMonedas.Size = new Size(390, 44);
+            cmbMonedas.TabIndex = 1;
             // 
             // txtCantidad
             // 
             txtCantidad.Font = new Font("Segoe UI", 15.75F, FontStyle.Bold);
-            txtCantidad.Location = new Point(265, 303);
+            txtCantidad.Location = new Point(100, 296);
             txtCantidad.Name = "txtCantidad";
             txtCantidad.PlaceholderText = "0.00";
             txtCantidad.Size = new Size(257, 42);
@@ -64,7 +63,7 @@
             pictureBox1.BackColor = SystemColors.ButtonHighlight;
             pictureBox1.ErrorImage = null;
             pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
-            pictureBox1.Location = new Point(1011, 12);
+            pictureBox1.Location = new Point(824, 29);
             pictureBox1.Name = "pictureBox1";
             pictureBox1.Size = new Size(195, 187);
             pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
@@ -76,7 +75,7 @@
             lblTitulo.AutoSize = true;
             lblTitulo.BackColor = SystemColors.ButtonHighlight;
             lblTitulo.Font = new Font("Segoe UI", 24.75F, FontStyle.Bold);
-            lblTitulo.Location = new Point(412, 124);
+            lblTitulo.Location = new Point(355, 94);
             lblTitulo.Name = "lblTitulo";
             lblTitulo.Size = new Size(463, 57);
             lblTitulo.TabIndex = 6;
@@ -86,31 +85,31 @@
             // 
             lblResultado.AutoSize = true;
             lblResultado.Font = new Font("Segoe UI", 15.75F, FontStyle.Bold);
-            lblResultado.Location = new Point(556, 414);
+            lblResultado.Location = new Point(425, 406);
             lblResultado.Name = "lblResultado";
             lblResultado.Size = new Size(152, 37);
             lblResultado.TabIndex = 7;
             lblResultado.Text = "Resultado:";
             // 
-            // button1
+            // btnConvertir
             // 
-            button1.BackColor = Color.DodgerBlue;
-            button1.FlatStyle = FlatStyle.Flat;
-            button1.Font = new Font("Segoe UI", 15.75F, FontStyle.Bold);
-            button1.ForeColor = Color.White;
-            button1.Location = new Point(541, 476);
-            button1.Name = "button1";
-            button1.Size = new Size(180, 59);
-            button1.TabIndex = 8;
-            button1.Text = "Convertir";
-            button1.UseVisualStyleBackColor = false;
+            btnConvertir.BackColor = Color.DodgerBlue;
+            btnConvertir.FlatStyle = FlatStyle.Flat;
+            btnConvertir.Font = new Font("Segoe UI", 15.75F, FontStyle.Bold);
+            btnConvertir.ForeColor = Color.White;
+            btnConvertir.Location = new Point(923, 286);
+            btnConvertir.Name = "btnConvertir";
+            btnConvertir.Size = new Size(180, 59);
+            btnConvertir.TabIndex = 8;
+            btnConvertir.Text = "Convertir";
+            btnConvertir.UseVisualStyleBackColor = false;
             // 
             // label1
             // 
             label1.AutoSize = true;
             label1.BackColor = SystemColors.ButtonHighlight;
             label1.Font = new Font("Segoe UI", 15.75F, FontStyle.Bold);
-            label1.Location = new Point(265, 236);
+            label1.Location = new Point(100, 237);
             label1.Name = "label1";
             label1.Size = new Size(268, 37);
             label1.TabIndex = 9;
@@ -121,13 +120,13 @@
             label2.AutoSize = true;
             label2.BackColor = SystemColors.ButtonHighlight;
             label2.Font = new Font("Segoe UI", 15.75F, FontStyle.Bold);
-            label2.Location = new Point(738, 236);
+            label2.Location = new Point(432, 237);
             label2.Name = "label2";
-            label2.Size = new Size(294, 37);
+            label2.Size = new Size(301, 37);
             label2.TabIndex = 10;
-            label2.Text = "Seleccione la moneda";
+            label2.Text = "Seleccione la moneda:";
             // 
-            // frmCalculadoraDivisas
+            // frmDivisas
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
@@ -136,14 +135,14 @@
             ClientSize = new Size(1218, 725);
             Controls.Add(label2);
             Controls.Add(label1);
-            Controls.Add(button1);
+            Controls.Add(btnConvertir);
             Controls.Add(lblResultado);
             Controls.Add(lblTitulo);
             Controls.Add(pictureBox1);
             Controls.Add(txtCantidad);
-            Controls.Add(cmbTipoCambio);
+            Controls.Add(cmbMonedas);
             DoubleBuffered = true;
-            Name = "frmCalculadoraDivisas";
+            Name = "frmDivisas";
             Text = "frmCalculadoraDivisas";
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ResumeLayout(false);
@@ -152,12 +151,12 @@
 
         #endregion
 
-        private ComboBox cmbTipoCambio;
+        private ComboBox cmbMonedas;
         private TextBox txtCantidad;
         private PictureBox pictureBox1;
         private Label lblTitulo;
         private Label lblResultado;
-        private Button button1;
+        private Button btnConvertir;
         private Label label1;
         private Label label2;
     }
