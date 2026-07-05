@@ -4,9 +4,10 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Data;
 using MySqlConnector;
+
 using System.Runtime.InteropServices.Marshalling;
 
-namespace prySistemaEscolar
+namespace pryCalculadoraDivisas
 {
     internal class clsConexion
     {
@@ -16,7 +17,7 @@ namespace prySistemaEscolar
         private string password = "extras";
         private string puerto = "3306";
 
-        private string cadenaConexion => $"server={host};database={db};user={usuario};password={password};port={puerto}";
+        private string cadenaConexion => $"server={host};database={db};user={usuario};password={password};port={puerto};Connection Timeout=30;SslMode=None;Pooling=true;";
         public MySqlConnection AbrirConexion()
         {
             var conexion = new MySqlConnection(cadenaConexion);
