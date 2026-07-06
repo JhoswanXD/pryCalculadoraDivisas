@@ -48,7 +48,6 @@
             cmbMonedas.Name = "cmbMonedas";
             cmbMonedas.Size = new Size(390, 44);
             cmbMonedas.TabIndex = 1;
-            cmbMonedas.Click += cmbMonedas_Click;
             // 
             // txtCantidad
             // 
