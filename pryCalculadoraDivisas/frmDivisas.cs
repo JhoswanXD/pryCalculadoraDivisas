@@ -32,28 +32,29 @@ namespace pryCalculadoraDivisas
 
                 dtMonedas.Rows.InsertAt(filaPMonedas, 0);
 
-                cmbMonedas.DisplayMember = "monedas";   
-                cmbMonedas.ValueMember = "iddivisas";       
-                cmbMonedas.DataSource = dtMonedas;          
-                cmbMonedas.SelectedIndex = 0;               
+                cmbMonedas.DisplayMember = "monedas";
+                cmbMonedas.ValueMember = "iddivisas";
+                cmbMonedas.DataSource = dtMonedas;
+                cmbMonedas.SelectedIndex = 0;
+
             }
             catch (Exception ex)
             {
                 MessageBox.Show("Error al rellenar los catálogos en los menús desplegables: " + ex.Message);
             }
         }
-
-        private void btnConvertir_Click(object sender, EventArgs e)
+        private void CalculoEnTiempoReal()
         {
-            // Se valida de que se haya seleccionado una moneda valida
-            if (cmbMonedas.SelectedIndex <= 0)
+            
+            if (string.IsNullOrWhiteSpace(txtCantidad.Text))
             {
-                MessageBox.Show("Por favor selecciona una moneda válida.", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                lblResultado.Text = "Resultado: 0.00";
                 return;
             }
 
+            bool resp = !double.TryParse(txtCantidad.Text, out double cantidadIngresada);
             // Se valida si haya ingresado una cantidad valida
-            if (!double.TryParse(txtCantidad.Text, out double cantidadIngresada))
+            if (resp)
             {
                 MessageBox.Show("Ingresa una cantidad numérica válida.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
@@ -71,7 +72,16 @@ namespace pryCalculadoraDivisas
 
             //Aqui se muestra el resultado
             double resultado = divisas.CalcularConversion(cantidadIngresada, tasaIngresada);
-            lblResultado.Text = "Resultado: " + resultado.ToString("N2", CultureInfo.CurrentCulture);
+            lblResultado.Text = "Resultado: " + resultado.ToString("N2");
+        }
+        private void txtCantidad_TextChanged(object sender, EventArgs e)
+        {
+            CalculoEnTiempoReal();
+        }
+
+        private void cmbMonedas_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            CalculoEnTiempoReal();
         }
     }
 }
